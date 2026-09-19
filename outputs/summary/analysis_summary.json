@@ -1,0 +1,305 @@
+{
+  "kpis": {
+    "total_orders": 99441.0,
+    "delivered_orders": 96478.0,
+    "eligible_delivered_orders": 96470.0,
+    "early_orders": 88644.0,
+    "on_time_orders": 1292.0,
+    "late_orders": 6534.0,
+    "late_delivery_rate": 6.77309007981756,
+    "average_delay_days": 10.620140801958984,
+    "median_delay_days": 7.0,
+    "p90_delay_days": 22.0,
+    "eligible_gross_order_value": 15418394.83,
+    "at_risk_order_value": 1150892.13,
+    "at_risk_order_value_share": 7.464409510130568,
+    "on_time_average_review_score": 4.290386055923885,
+    "late_average_review_score": 2.270490518727472,
+    "review_score_gap": 2.0198955371964127,
+    "cancellation_and_unavailable_rate": 1.2409368369183738,
+    "delivery_timestamp_coverage": 97.01833247855512,
+    "review_coverage_rate": 99.3303617704986
+  },
+  "top_sellers": [
+    {
+      "seller_id": "4869f7a5dfa277a7dca6462dcf3b52b2",
+      "eligible_orders": 1124,
+      "late_orders": 118,
+      "late_delivery_rate": 10.498220640569397,
+      "dispatch_sla_breach_rate": 5.5160142348754455,
+      "median_processing_days": 1124,
+      "at_risk_order_value": 26999.78,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "4a3ca9315b744ce9f8e9374361493884",
+      "eligible_orders": 1772,
+      "late_orders": 172,
+      "late_delivery_rate": 9.706546275395034,
+      "dispatch_sla_breach_rate": 8.690744920993227,
+      "median_processing_days": 1772,
+      "at_risk_order_value": 24509.17,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "7c67e1448b00f6e969d365cea6b010ab",
+      "eligible_orders": 973,
+      "late_orders": 89,
+      "late_delivery_rate": 9.146968139773897,
+      "dispatch_sla_breach_rate": 29.701952723535456,
+      "median_processing_days": 973,
+      "at_risk_order_value": 21248.61,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "7d13fca15225358621be4086e1eb0964",
+      "eligible_orders": 558,
+      "late_orders": 64,
+      "late_delivery_rate": 11.469534050179211,
+      "dispatch_sla_breach_rate": 14.874551971326165,
+      "median_processing_days": 558,
+      "at_risk_order_value": 15295.37,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "fa1c13f2614d7b5c4749cbc52fecda94",
+      "eligible_orders": 578,
+      "late_orders": 53,
+      "late_delivery_rate": 9.16955017301038,
+      "dispatch_sla_breach_rate": 7.958477508650519,
+      "median_processing_days": 578,
+      "at_risk_order_value": 15075.46,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "1025f0e2d44d7041d6cf58b6550e0bfa",
+      "eligible_orders": 910,
+      "late_orders": 72,
+      "late_delivery_rate": 7.912087912087911,
+      "dispatch_sla_breach_rate": 17.802197802197803,
+      "median_processing_days": 910,
+      "at_risk_order_value": 14281.76,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "1f50f920176fa81dab994f9023523100",
+      "eligible_orders": 1399,
+      "late_orders": 124,
+      "late_delivery_rate": 8.863473909935667,
+      "dispatch_sla_breach_rate": 10.864903502501786,
+      "median_processing_days": 1399,
+      "at_risk_order_value": 11593.079999999998,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "712e6ed8aa4aa1fa65dab41fed5737e4",
+      "eligible_orders": 77,
+      "late_orders": 16,
+      "late_delivery_rate": 20.77922077922078,
+      "dispatch_sla_breach_rate": 19.480519480519483,
+      "median_processing_days": 77,
+      "at_risk_order_value": 9738.98,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "620c87c171fb2a6dd6e8bb4dec959fc6",
+      "eligible_orders": 722,
+      "late_orders": 63,
+      "late_delivery_rate": 8.725761772853186,
+      "dispatch_sla_breach_rate": 7.479224376731302,
+      "median_processing_days": 722,
+      "at_risk_order_value": 9402.45,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "06a2c3af7b3aee5d69171b0e14f0ee87",
+      "eligible_orders": 389,
+      "late_orders": 74,
+      "late_delivery_rate": 19.02313624678663,
+      "dispatch_sla_breach_rate": 31.10539845758355,
+      "median_processing_days": 389,
+      "at_risk_order_value": 8622.19,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    }
+  ],
+  "top_categories": [
+    {
+      "category": "health_beauty",
+      "eligible_orders": 8647,
+      "item_count": 9465,
+      "late_delivery_rate": 7.5647120972002115,
+      "at_risk_item_value": 94273.39,
+      "average_review_score": 4.1895341416719845
+    },
+    {
+      "category": "watches_gifts",
+      "eligible_orders": 5493,
+      "item_count": 5857,
+      "late_delivery_rate": 7.205053781799556,
+      "at_risk_item_value": 91298.05,
+      "average_review_score": 4.071391708240151
+    },
+    {
+      "category": "bed_bath_table",
+      "eligible_orders": 9272,
+      "item_count": 10953,
+      "late_delivery_rate": 7.03003743266685,
+      "at_risk_item_value": 79235.1,
+      "average_review_score": 3.923922075523959
+    },
+    {
+      "category": "sports_leisure",
+      "eligible_orders": 7529,
+      "item_count": 8430,
+      "late_delivery_rate": 6.31079478054567,
+      "at_risk_item_value": 70453.26000000001,
+      "average_review_score": 4.165214277187538
+    },
+    {
+      "category": "auto",
+      "eligible_orders": 3809,
+      "item_count": 4139,
+      "late_delivery_rate": 7.030683740033824,
+      "at_risk_item_value": 66549.23000000001,
+      "average_review_score": 4.1149341142020495
+    },
+    {
+      "category": "computers_accessories",
+      "eligible_orders": 6529,
+      "item_count": 7643,
+      "late_delivery_rate": 6.489598325264949,
+      "at_risk_item_value": 61459.32000000001,
+      "average_review_score": 3.9872485868279215
+    },
+    {
+      "category": "furniture_decor",
+      "eligible_orders": 6307,
+      "item_count": 8160,
+      "late_delivery_rate": 7.034313725490196,
+      "at_risk_item_value": 58515.94,
+      "average_review_score": 3.9532178217821774
+    },
+    {
+      "category": "cool_stuff",
+      "eligible_orders": 3559,
+      "item_count": 3718,
+      "late_delivery_rate": 5.836471221086606,
+      "at_risk_item_value": 39269.48,
+      "average_review_score": 4.195445920303605
+    },
+    {
+      "category": "housewares",
+      "eligible_orders": 5743,
+      "item_count": 6795,
+      "late_delivery_rate": 5.003679175864606,
+      "at_risk_item_value": 38465.31,
+      "average_review_score": 4.106275902901125
+    },
+    {
+      "category": "baby",
+      "eligible_orders": 2809,
+      "item_count": 2982,
+      "late_delivery_rate": 7.679409792085848,
+      "at_risk_item_value": 37856.2,
+      "average_review_score": 4.078066914498141
+    }
+  ],
+  "top_regions": [
+    {
+      "customer_state": "SP",
+      "eligible_orders": 40494,
+      "late_delivery_rate": 4.494493011310317,
+      "median_shipping_days": 4.408136574074074,
+      "at_risk_order_value": 303264.84,
+      "average_review_score": 4.245790493220087
+    },
+    {
+      "customer_state": "RJ",
+      "eligible_orders": 12350,
+      "late_delivery_rate": 12.105263157894736,
+      "median_shipping_days": 8.350468750000001,
+      "at_risk_order_value": 251522.72,
+      "average_review_score": 3.965440995823438
+    },
+    {
+      "customer_state": "MG",
+      "eligible_orders": 11354,
+      "late_delivery_rate": 4.571076272679233,
+      "median_shipping_days": 7.191684027777778,
+      "at_risk_order_value": 88242.93,
+      "average_review_score": 4.192290651307045
+    },
+    {
+      "customer_state": "BA",
+      "eligible_orders": 3256,
+      "late_delivery_rate": 12.162162162162163,
+      "median_shipping_days": 13.837309027777778,
+      "at_risk_order_value": 73513.84,
+      "average_review_score": 3.930628677609167
+    },
+    {
+      "customer_state": "RS",
+      "eligible_orders": 5344,
+      "late_delivery_rate": 6.081586826347305,
+      "median_shipping_days": 10.004369212962963,
+      "at_risk_order_value": 51843.54000000001,
+      "average_review_score": 4.184754036800601
+    },
+    {
+      "customer_state": "SC",
+      "eligible_orders": 3546,
+      "late_delivery_rate": 8.206429780033842,
+      "median_shipping_days": 9.526145833333334,
+      "at_risk_order_value": 45021.530000000006,
+      "average_review_score": 4.133560670645069
+    },
+    {
+      "customer_state": "ES",
+      "eligible_orders": 1995,
+      "late_delivery_rate": 10.726817042606516,
+      "median_shipping_days": 9.966261574074077,
+      "at_risk_order_value": 40332.78999999999,
+      "average_review_score": 4.078720162519045
+    },
+    {
+      "customer_state": "CE",
+      "eligible_orders": 1279,
+      "late_delivery_rate": 13.76075058639562,
+      "median_shipping_days": 14.75576388888889,
+      "at_risk_order_value": 36918.53999999999,
+      "average_review_score": 3.9442262372348784
+    },
+    {
+      "customer_state": "PR",
+      "eligible_orders": 4923,
+      "late_delivery_rate": 4.042250660166565,
+      "median_shipping_days": 7.182280092592593,
+      "at_risk_order_value": 34202.72,
+      "average_review_score": 4.239795918367347
+    },
+    {
+      "customer_state": "PE",
+      "eligible_orders": 1593,
+      "late_delivery_rate": 9.6045197740113,
+      "median_shipping_days": 12.846215277777778,
+      "at_risk_order_value": 31938.3,
+      "average_review_score": 4.082963901203294
+    }
+  ],
+  "caveats": [
+    "At-risk order value is gross-value exposure, not proven loss.",
+    "Seller involvement does not prove seller causality.",
+    "Reviews may have selection bias.",
+    "The dataset is historical and estimated-delivery performance may reflect multiple actors."
+  ]
+}

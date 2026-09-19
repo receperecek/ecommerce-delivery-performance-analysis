@@ -1,0 +1,1 @@
+-- Separate order, order-seller, and order-item facts are materialized by the pipeline.

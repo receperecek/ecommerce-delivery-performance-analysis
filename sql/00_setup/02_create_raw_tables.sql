@@ -1,0 +1,1 @@
+-- Raw tables are created idempotently by src.data_loader using source headers.

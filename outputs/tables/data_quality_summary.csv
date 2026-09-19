@@ -1,0 +1,13 @@
+check_name,severity,value,detail
+source_row_count_total,INFO,1550922.0,
+order_fact_unique_order_id,PASS,99441.0,COUNT(*) must equal COUNT(DISTINCT order_id)
+order_item_composite_duplicates,PASS,0.0,
+payment_composite_duplicates,PASS,0.0,
+review_multiplicity_orders,WARNING,547.0,
+negative_item_values,WARNING,0.0,
+delivered_missing_delivery_date,WARNING,8.0,
+invalid_processing_duration,WARNING,1359.0,
+multi_item_order_rate,INFO,9.85810681710763,
+multi_seller_order_rate,INFO,1.2851841795637613,
+multi_payment_order_rate,INFO,2.9776450357498416,
+review_score_invalid,CRITICAL,0.0,

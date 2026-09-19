@@ -1,0 +1,23 @@
+# Environment and secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Raw source data
+data/raw/*.csv
+data/raw/*.zip
+
+# Generated logs
+outputs/logs/*.log
+
+# Local generated figures are reproducible but not committed by default
+# outputs/figures/*.png
+
+# Editor and operating system
+.vscode/
+.DS_Store
+Thumbs.db

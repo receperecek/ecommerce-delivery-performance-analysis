@@ -1,0 +1,1 @@
+-- Aggregated item, payment, and deterministic review models are materialized by the pipeline.

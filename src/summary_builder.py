@@ -1,0 +1,11 @@
+import json
+from pathlib import Path
+import pandas as pd
+
+def build_summary(output_dir: Path):
+    t=output_dir/'tables'; k=pd.read_csv(t/'executive_kpis.csv').set_index('metric')['value']; s=pd.read_csv(t/'seller_priority.csv'); c=pd.read_csv(t/'category_priority.csv'); r=pd.read_csv(t/'regional_performance.csv')
+    payload={'kpis':k.to_dict(),'top_sellers':s.head(10).to_dict('records'),'top_categories':c.head(10).to_dict('records'),'top_regions':r.head(10).to_dict('records'),'caveats':['At-risk order value is gross-value exposure, not proven loss.','Seller involvement does not prove seller causality.','Reviews may have selection bias.','The dataset is historical and estimated-delivery performance may reflect multiple actors.']}
+    (output_dir/'summary').mkdir(parents=True,exist_ok=True); (output_dir/'summary'/'analysis_summary.json').write_text(json.dumps(payload,indent=2,default=str),encoding='utf-8')
+    def v(n): return float(k[n])
+    lines=[f'# Executive summary','',f"Eligible delivered orders had a {v('late_delivery_rate'):.1f}% late-delivery rate across {int(v('eligible_delivered_orders')):,} orders.",f"Gross order value for eligible delivered orders was BRL {v('eligible_gross_order_value'):,.2f}; BRL {v('at_risk_order_value'):,.2f} ({v('at_risk_order_value_share'):.1f}%) was observed among late deliveries.",f"Average review score was {v('on_time_average_review_score'):.2f} for early/on-time orders and {v('late_average_review_score'):.2f} for late orders, a gap of {v('review_score_gap'):.2f} points.",'','## Operating implications','Prioritize sufficiently large segments with above-platform late rates and meaningful exposure, while using dispatch and process metrics as investigation signals rather than causal proof. Review process-stage duration and boundary-month completeness before setting operational targets.','', '## Caveats','At-risk order value is exposure, not confirmed revenue or profit loss. Seller involvement does not prove seller causality; reviews may have selection bias; the dataset is historical; and estimated delivery reflects multiple operational actors.']
+    (output_dir/'summary'/'executive_summary.md').write_text('\n'.join(lines),encoding='utf-8')

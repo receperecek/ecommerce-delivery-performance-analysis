@@ -1,0 +1,1 @@
+-- Typed staging is materialized by the Python loader before analytics exports.
