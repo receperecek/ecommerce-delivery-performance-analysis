@@ -37,3 +37,6 @@ def validate_sql_results(engine, output_dir: Path):
     if not np.isclose(100 * len(late) / len(eligible), float(kpi['late_delivery_rate']), atol=ABSOLUTE_TOLERANCE, rtol=0): raise AssertionError('SQL late delivery rate mismatch')
     if not np.isclose(late['gross_order_value'].sum(), float(kpi['at_risk_order_value']), atol=ABSOLUTE_TOLERANCE, rtol=0): raise AssertionError('SQL at-risk value mismatch')
     if float(kpi['at_risk_order_value']) > float(kpi['eligible_gross_order_value']): raise AssertionError('At-risk value exceeds eligible gross value')
+    seller_reconciliation = pd.read_sql_query(text('SELECT order_id, gross_order_value, seller_attributable_gross_order_value, reconciliation_gap FROM analytics.seller_value_reconciliation WHERE gross_order_value IS NOT NULL'), engine)
+    if seller_reconciliation['order_id'].duplicated().any(): raise AssertionError('Seller reconciliation is not one row per order')
+    if not np.allclose(seller_reconciliation['reconciliation_gap'], 0, atol=ABSOLUTE_TOLERANCE, rtol=0): raise AssertionError('Seller-attributable item-plus-freight value does not reconcile to order gross value')

@@ -1,12 +1,20 @@
 -- Purpose: rank sufficiently large sellers using volume, platform-relative late rate, dispatch SLA, and exposure.
 -- Output grain: one row per seller with at least the configured minimum eligible orders; association is not seller causality.
 DROP TABLE IF EXISTS analytics.rpt_seller_priority;
+DROP TABLE IF EXISTS analytics.seller_value_reconciliation;
+CREATE TABLE analytics.seller_value_reconciliation AS
+SELECT f.order_id, f.gross_order_value, SUM(COALESCE(s.seller_item_value, 0) + COALESCE(s.seller_freight_value, 0)) AS seller_attributable_gross_order_value,
+       SUM(COALESCE(s.seller_item_value, 0) + COALESCE(s.seller_freight_value, 0)) - f.gross_order_value AS reconciliation_gap
+FROM analytics.fact_order_delivery f
+LEFT JOIN analytics.fact_order_seller_delivery s ON s.order_id = f.order_id
+GROUP BY f.order_id, f.gross_order_value;
 CREATE TABLE analytics.rpt_seller_priority AS
 WITH seller_metrics AS (
     SELECT seller_id, COUNT(DISTINCT order_id)::integer AS eligible_orders, COUNT(DISTINCT order_id) FILTER (WHERE delivery_class = 'Late')::integer AS late_orders,
            100.0 * COUNT(DISTINCT order_id) FILTER (WHERE delivery_class = 'Late') / NULLIF(COUNT(DISTINCT order_id), 0) AS late_delivery_rate,
            100.0 * COUNT(*) FILTER (WHERE dispatch_sla_breach) / NULLIF(COUNT(*), 0) AS dispatch_sla_breach_rate,
-           COUNT(*)::numeric AS median_processing_days, SUM(gross_order_value) FILTER (WHERE delivery_class = 'Late') AS at_risk_order_value
+           percentile_cont(0.5) WITHIN GROUP (ORDER BY processing_days) FILTER (WHERE processing_days >= 0) AS median_processing_days,
+           COALESCE(SUM(COALESCE(seller_item_value, 0) + COALESCE(seller_freight_value, 0)) FILTER (WHERE delivery_class = 'Late'), 0)::numeric AS at_risk_order_value
     FROM analytics.fact_order_seller_delivery WHERE eligible GROUP BY seller_id
 ), reference AS (
     SELECT 100.0 * COUNT(*) FILTER (WHERE delivery_class = 'Late') / NULLIF(COUNT(*), 0) AS platform_late_delivery_rate FROM analytics.fact_order_delivery WHERE eligible

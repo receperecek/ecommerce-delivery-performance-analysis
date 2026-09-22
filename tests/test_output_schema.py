@@ -25,3 +25,17 @@ def test_pipeline_references_sql_source_of_truth():
     assert 'run_sql_file' in code and 'query_sql_file' in code
     assert 'sql/03_analysis/01_executive_kpis.sql' in code
     assert 'build_models' not in code and 'make_analyses' not in code
+    assert "args.stage or 'summary'" in code
+    assert "stage_order = ['load', 'models', 'quality', 'analysis', 'validate', 'visualize', 'summary']" in code
+
+def test_seller_and_category_sql_metric_contracts():
+    seller=Path('sql/03_analysis/06_seller_priority.sql').read_text(encoding='utf-8')
+    category=Path('sql/03_analysis/07_category_priority.sql').read_text(encoding='utf-8')
+    facts=Path('sql/02_models/03_analytics_facts.sql').read_text(encoding='utf-8')
+    assert 'percentile_cont(0.5)' in seller and 'ORDER BY processing_days' in seller
+    assert 'COUNT(*)::numeric AS median_processing_days' not in seller
+    assert 'seller_item_value' in seller and 'seller_freight_value' in seller
+    assert 'seller_value_reconciliation' in seller
+    assert 'processing_days' in facts
+    assert 'COUNT(DISTINCT order_id) FILTER (WHERE delivery_class = \'Late\')' in category
+    assert 'SUM(price + freight_value)' in category

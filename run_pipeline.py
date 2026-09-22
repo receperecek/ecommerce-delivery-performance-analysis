@@ -40,11 +40,13 @@ OUTPUT_COLUMNS = {
     'management_priority_summary.csv': ['priority_area', 'evidence'],
 }
 
-def run_pipeline(config: Config, logger):
+def validate_required_sql(config: Config):
     required_paths = SETUP_FILES + [Path('sql/01_quality/01_data_quality_profile.sql')] + MODEL_FILES + [x[0] for x in ANALYSIS_FILES]
     for relative_path in required_paths:
         if not (config.root / relative_path).exists():
             raise FileNotFoundError(f'Missing required SQL model: {relative_path}')
+
+def setup_and_load(config: Config):
     engine = get_engine(config)
     check_connection(engine)
     source_data, row_counts = load_csvs(config.raw_dir)
@@ -53,30 +55,54 @@ def run_pipeline(config: Config, logger):
             run_sql_file(connection, config.root / path)
         connection.execute(text('UPDATE analytics.pipeline_config SET min_seller_orders = :seller, min_category_orders = :category, min_region_orders = :region WHERE config_id = 1'), {'seller': config.min_seller_orders, 'category': config.min_category_orders, 'region': config.min_region_orders})
     upload_raw(source_data, engine)
+    return engine, row_counts
+
+def run_models(config: Config, engine):
     with engine.begin() as connection:
         for path in MODEL_FILES:
             run_sql_file(connection, config.root / path)
+
+def run_quality(config: Config, engine):
+    with engine.begin() as connection:
         quality_result = run_sql_file(connection, config.root / Path('sql/01_quality/01_data_quality_profile.sql'))
         quality_rows = quality_result.mappings().all()
-        export_table(pd.DataFrame(quality_rows, columns=['check_name', 'severity', 'value', 'detail']), config.output_dir, 'data_quality_summary.csv')
+    export_table(pd.DataFrame(quality_rows, columns=['check_name', 'severity', 'value', 'detail']), config.output_dir, 'data_quality_summary.csv')
+
+def run_analysis(config: Config, engine):
+    with engine.begin() as connection:
         for path, result_table, output_name in ANALYSIS_FILES:
             rows = query_sql_file(connection, config.root / path, result_table)
             export_table(pd.DataFrame(rows, columns=OUTPUT_COLUMNS[output_name]), config.output_dir, output_name)
-    validate_outputs(config.output_dir, config)
-    validate_sql_results(engine, config.output_dir)
-    make_figures(config.output_dir / 'tables', config.output_dir / 'figures')
-    build_summary(config.output_dir)
-    logger.info('SQL-first pipeline completed successfully: source rows=%s', sum(row_counts.values()))
+
+def run_pipeline(config: Config, logger, stage: str = 'summary'):
+    validate_required_sql(config)
+    stage_order = ['load', 'models', 'quality', 'analysis', 'validate', 'visualize', 'summary']
+    target_index = stage_order.index(stage)
+    engine, row_counts = setup_and_load(config)
+    if target_index >= stage_order.index('models'):
+        run_models(config, engine)
+    if target_index >= stage_order.index('quality'):
+        run_quality(config, engine)
+    if target_index >= stage_order.index('analysis'):
+        run_analysis(config, engine)
+    if target_index >= stage_order.index('validate'):
+        validate_outputs(config.output_dir, config)
+        validate_sql_results(engine, config.output_dir)
+    if target_index >= stage_order.index('visualize'):
+        make_figures(config.output_dir / 'tables', config.output_dir / 'figures')
+    if target_index >= stage_order.index('summary'):
+        build_summary(config.output_dir)
+    logger.info('SQL-first stage completed successfully: stage=%s source rows=%s', stage, sum(row_counts.values()))
 
 def main():
     parser = argparse.ArgumentParser(description='Run the SQL-first Olist delivery analysis pipeline.')
     parser.add_argument('--stage', choices=['load', 'quality', 'models', 'analysis', 'validate', 'visualize', 'summary'], help='Accepted for reproducible stage-oriented invocation; dependencies are run in deterministic order.')
-    parser.parse_args()
+    args = parser.parse_args()
     config = Config.from_env()
     logger = configure_logging(config.output_dir)
     (config.output_dir / 'tables').mkdir(parents=True, exist_ok=True)
     (config.output_dir / 'figures').mkdir(parents=True, exist_ok=True)
-    run_pipeline(config, logger)
+    run_pipeline(config, logger, args.stage or 'summary')
 
 if __name__ == '__main__':
     main()

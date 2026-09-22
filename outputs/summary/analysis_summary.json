@@ -27,7 +27,7 @@
       "late_orders": 118,
       "late_delivery_rate": 10.498220640569397,
       "dispatch_sla_breach_rate": 5.516014234875445,
-      "median_processing_days": 1124,
+      "median_processing_days": 1.9525636574074072,
       "at_risk_order_value": 26999.78,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -38,8 +38,8 @@
       "late_orders": 172,
       "late_delivery_rate": 9.706546275395034,
       "dispatch_sla_breach_rate": 8.690744920993229,
-      "median_processing_days": 1772,
-      "at_risk_order_value": 24509.17,
+      "median_processing_days": 1.86265625,
+      "at_risk_order_value": 23999.65,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
     },
@@ -49,7 +49,7 @@
       "late_orders": 89,
       "late_delivery_rate": 9.146968139773897,
       "dispatch_sla_breach_rate": 29.701952723535456,
-      "median_processing_days": 973,
+      "median_processing_days": 10.980625,
       "at_risk_order_value": 21248.61,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -60,7 +60,7 @@
       "late_orders": 64,
       "late_delivery_rate": 11.469534050179211,
       "dispatch_sla_breach_rate": 14.874551971326165,
-      "median_processing_days": 558,
+      "median_processing_days": 3.089537037037037,
       "at_risk_order_value": 15295.37,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -71,7 +71,7 @@
       "late_orders": 53,
       "late_delivery_rate": 9.16955017301038,
       "dispatch_sla_breach_rate": 7.958477508650518,
-      "median_processing_days": 578,
+      "median_processing_days": 1.9478472222222225,
       "at_risk_order_value": 15075.46,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -82,7 +82,7 @@
       "late_orders": 72,
       "late_delivery_rate": 7.912087912087912,
       "dispatch_sla_breach_rate": 17.802197802197803,
-      "median_processing_days": 910,
+      "median_processing_days": 3.0492245370370368,
       "at_risk_order_value": 14281.76,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -93,7 +93,7 @@
       "late_orders": 124,
       "late_delivery_rate": 8.863473909935667,
       "dispatch_sla_breach_rate": 10.864903502501788,
-      "median_processing_days": 1399,
+      "median_processing_days": 3.3106597222222223,
       "at_risk_order_value": 11593.08,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -104,7 +104,7 @@
       "late_orders": 30,
       "late_delivery_rate": 13.761467889908255,
       "dispatch_sla_breach_rate": 0.9174311926605504,
-      "median_processing_days": 218,
+      "median_processing_days": 1.759010416666667,
       "at_risk_order_value": 9862.99,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -115,7 +115,7 @@
       "late_orders": 16,
       "late_delivery_rate": 20.779220779220775,
       "dispatch_sla_breach_rate": 19.48051948051948,
-      "median_processing_days": 77,
+      "median_processing_days": 2.217627314814815,
       "at_risk_order_value": 9738.98,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -126,7 +126,7 @@
       "late_orders": 63,
       "late_delivery_rate": 8.725761772853186,
       "dispatch_sla_breach_rate": 7.4792243767313025,
-      "median_processing_days": 722,
+      "median_processing_days": 1.2494212962962965,
       "at_risk_order_value": 9402.45,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
@@ -137,80 +137,80 @@
       "category": "health_beauty",
       "eligible_orders": 8647,
       "item_count": 9465,
-      "late_delivery_rate": 7.5647120972002115,
-      "at_risk_item_value": 94273.39,
+      "late_delivery_rate": 7.5054932346478545,
+      "at_risk_item_value": 109283.34,
       "average_review_score": 4.1895341416719845
     },
     {
       "category": "watches_gifts",
       "eligible_orders": 5493,
       "item_count": 5857,
-      "late_delivery_rate": 7.205053781799556,
-      "at_risk_item_value": 91298.05,
+      "late_delivery_rate": 7.391225195703623,
+      "at_risk_item_value": 99373.1,
       "average_review_score": 4.071391708240152
     },
     {
       "category": "bed_bath_table",
       "eligible_orders": 9272,
       "item_count": 10953,
-      "late_delivery_rate": 7.030037432666849,
-      "at_risk_item_value": 79235.1,
+      "late_delivery_rate": 7.43097497842968,
+      "at_risk_item_value": 94931.39,
       "average_review_score": 3.923922075523959
     },
     {
       "category": "sports_leisure",
       "eligible_orders": 7529,
       "item_count": 8430,
-      "late_delivery_rate": 6.31079478054567,
-      "at_risk_item_value": 70453.26,
+      "late_delivery_rate": 6.574578297250631,
+      "at_risk_item_value": 82642.84,
       "average_review_score": 4.165214277187537
     },
     {
       "category": "auto",
       "eligible_orders": 3809,
       "item_count": 4139,
-      "late_delivery_rate": 7.030683740033825,
-      "at_risk_item_value": 66549.23,
+      "late_delivery_rate": 7.298503544237331,
+      "at_risk_item_value": 74704.14,
       "average_review_score": 4.1149341142020495
-    },
-    {
-      "category": "computers_accessories",
-      "eligible_orders": 6529,
-      "item_count": 7643,
-      "late_delivery_rate": 6.489598325264948,
-      "at_risk_item_value": 61459.32,
-      "average_review_score": 3.9872485868279215
     },
     {
       "category": "furniture_decor",
       "eligible_orders": 6307,
       "item_count": 8160,
-      "late_delivery_rate": 7.034313725490196,
-      "at_risk_item_value": 58515.94,
+      "late_delivery_rate": 7.1190740447122245,
+      "at_risk_item_value": 72393.02,
       "average_review_score": 3.9532178217821774
     },
     {
-      "category": "cool_stuff",
-      "eligible_orders": 3559,
-      "item_count": 3718,
-      "late_delivery_rate": 5.836471221086605,
-      "at_risk_item_value": 39269.48,
-      "average_review_score": 4.195445920303605
+      "category": "computers_accessories",
+      "eligible_orders": 6529,
+      "item_count": 7643,
+      "late_delivery_rate": 6.386889263286873,
+      "at_risk_item_value": 71457.85,
+      "average_review_score": 3.9872485868279215
     },
     {
       "category": "housewares",
       "eligible_orders": 5743,
       "item_count": 6795,
-      "late_delivery_rate": 5.003679175864606,
-      "at_risk_item_value": 38465.31,
+      "late_delivery_rate": 5.363050670381334,
+      "at_risk_item_value": 47237.49,
       "average_review_score": 4.106275902901125
+    },
+    {
+      "category": "cool_stuff",
+      "eligible_orders": 3559,
+      "item_count": 3718,
+      "late_delivery_rate": 5.900533857825232,
+      "at_risk_item_value": 44669.04,
+      "average_review_score": 4.195445920303605
     },
     {
       "category": "baby",
       "eligible_orders": 2809,
       "item_count": 2982,
-      "late_delivery_rate": 7.679409792085848,
-      "at_risk_item_value": 37856.2,
+      "late_delivery_rate": 8.04556781772873,
+      "at_risk_item_value": 44280.44,
       "average_review_score": 4.078066914498141
     }
   ],
