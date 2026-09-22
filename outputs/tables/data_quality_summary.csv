@@ -1,13 +1,19 @@
 check_name,severity,value,detail
-source_row_count_total,INFO,1550922.0,
-order_fact_unique_order_id,PASS,99441.0,COUNT(*) must equal COUNT(DISTINCT order_id)
-order_item_composite_duplicates,PASS,0.0,
-payment_composite_duplicates,PASS,0.0,
-review_multiplicity_orders,WARNING,547.0,
-negative_item_values,WARNING,0.0,
-delivered_missing_delivery_date,WARNING,8.0,
-invalid_processing_duration,WARNING,1359.0,
-multi_item_order_rate,INFO,9.85810681710763,
-multi_seller_order_rate,INFO,1.2851841795637613,
-multi_payment_order_rate,INFO,2.9776450357498416,
-review_score_invalid,CRITICAL,0.0,
+delivered_missing_delivery_date,WARNING,8,delivered orders missing customer-delivery date
+invalid_processing_duration,WARNING,1359,negative approval-to-carrier duration
+multi_item_order_rate,INFO,9.8581068171076317,percent of orders with more than one item
+multi_payment_order_rate,INFO,2.9776450357498416,percent of orders with more than one payment
+multi_seller_order_rate,INFO,1.2851841795637614,percent of orders with more than one seller
+negative_item_values,WARNING,0,negative price or freight values
+order_fact_unique_order_id,PASS,99441,one row per order
+order_item_composite_duplicates,PASS,0,order_id + order_item_id duplicates
+payment_composite_duplicates,PASS,0,order_id + payment_sequential duplicates
+review_multiplicity_orders,WARNING,547,orders with more than one source review record
+review_score_invalid,PASS,0,review score outside 1 through 5
+source_customers_row_count,INFO,99441,raw.customers row count
+source_order_items_row_count,INFO,112650,raw.order_items row count
+source_order_payments_row_count,INFO,103886,raw.order_payments row count
+source_order_reviews_row_count,INFO,99224,raw.order_reviews row count
+source_orders_row_count,INFO,99441,raw.orders row count
+source_products_row_count,INFO,32951,raw.products row count
+source_sellers_row_count,INFO,3095,raw.sellers row count

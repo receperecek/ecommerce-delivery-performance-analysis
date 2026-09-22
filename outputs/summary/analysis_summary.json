@@ -2,23 +2,23 @@
   "kpis": {
     "total_orders": 99441.0,
     "delivered_orders": 96478.0,
-    "eligible_delivered_orders": 96470.0,
-    "early_orders": 88644.0,
-    "on_time_orders": 1292.0,
-    "late_orders": 6534.0,
-    "late_delivery_rate": 6.77309007981756,
-    "average_delay_days": 10.620140801958984,
-    "median_delay_days": 7.0,
-    "p90_delay_days": 22.0,
-    "eligible_gross_order_value": 15418394.83,
     "at_risk_order_value": 1150892.13,
-    "at_risk_order_value_share": 7.464409510130568,
-    "on_time_average_review_score": 4.290386055923885,
-    "late_average_review_score": 2.270490518727472,
-    "review_score_gap": 2.0198955371964127,
+    "at_risk_order_value_share": 7.464409510130569,
+    "average_delay_days": 10.620140801958984,
     "cancellation_and_unavailable_rate": 1.2409368369183738,
     "delivery_timestamp_coverage": 97.01833247855512,
-    "review_coverage_rate": 99.3303617704986
+    "early_orders": 88644.0,
+    "eligible_delivered_orders": 96470.0,
+    "eligible_gross_order_value": 15418394.83,
+    "late_average_review_score": 2.270490518727472,
+    "late_delivery_rate": 6.77309007981756,
+    "late_orders": 6534.0,
+    "median_delay_days": 7.0,
+    "on_time_average_review_score": 4.290386055923885,
+    "on_time_orders": 1292.0,
+    "p90_delay_days": 22.0,
+    "review_coverage_rate": 99.3303617704986,
+    "review_score_gap": 2.019895537196412
   },
   "top_sellers": [
     {
@@ -26,7 +26,7 @@
       "eligible_orders": 1124,
       "late_orders": 118,
       "late_delivery_rate": 10.498220640569397,
-      "dispatch_sla_breach_rate": 5.5160142348754455,
+      "dispatch_sla_breach_rate": 5.516014234875445,
       "median_processing_days": 1124,
       "at_risk_order_value": 26999.78,
       "platform_late_delivery_rate": 6.77309007981756,
@@ -37,7 +37,7 @@
       "eligible_orders": 1772,
       "late_orders": 172,
       "late_delivery_rate": 9.706546275395034,
-      "dispatch_sla_breach_rate": 8.690744920993227,
+      "dispatch_sla_breach_rate": 8.690744920993229,
       "median_processing_days": 1772,
       "at_risk_order_value": 24509.17,
       "platform_late_delivery_rate": 6.77309007981756,
@@ -70,7 +70,7 @@
       "eligible_orders": 578,
       "late_orders": 53,
       "late_delivery_rate": 9.16955017301038,
-      "dispatch_sla_breach_rate": 7.958477508650519,
+      "dispatch_sla_breach_rate": 7.958477508650518,
       "median_processing_days": 578,
       "at_risk_order_value": 15075.46,
       "platform_late_delivery_rate": 6.77309007981756,
@@ -80,7 +80,7 @@
       "seller_id": "1025f0e2d44d7041d6cf58b6550e0bfa",
       "eligible_orders": 910,
       "late_orders": 72,
-      "late_delivery_rate": 7.912087912087911,
+      "late_delivery_rate": 7.912087912087912,
       "dispatch_sla_breach_rate": 17.802197802197803,
       "median_processing_days": 910,
       "at_risk_order_value": 14281.76,
@@ -92,9 +92,20 @@
       "eligible_orders": 1399,
       "late_orders": 124,
       "late_delivery_rate": 8.863473909935667,
-      "dispatch_sla_breach_rate": 10.864903502501786,
+      "dispatch_sla_breach_rate": 10.864903502501788,
       "median_processing_days": 1399,
-      "at_risk_order_value": 11593.079999999998,
+      "at_risk_order_value": 11593.08,
+      "platform_late_delivery_rate": 6.77309007981756,
+      "priority_group": "Investigate Now"
+    },
+    {
+      "seller_id": "f7ba60f8c3f99e7ee4042fdef03b70c4",
+      "eligible_orders": 218,
+      "late_orders": 30,
+      "late_delivery_rate": 13.761467889908255,
+      "dispatch_sla_breach_rate": 0.9174311926605504,
+      "median_processing_days": 218,
+      "at_risk_order_value": 9862.99,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
     },
@@ -102,8 +113,8 @@
       "seller_id": "712e6ed8aa4aa1fa65dab41fed5737e4",
       "eligible_orders": 77,
       "late_orders": 16,
-      "late_delivery_rate": 20.77922077922078,
-      "dispatch_sla_breach_rate": 19.480519480519483,
+      "late_delivery_rate": 20.779220779220775,
+      "dispatch_sla_breach_rate": 19.48051948051948,
       "median_processing_days": 77,
       "at_risk_order_value": 9738.98,
       "platform_late_delivery_rate": 6.77309007981756,
@@ -114,20 +125,9 @@
       "eligible_orders": 722,
       "late_orders": 63,
       "late_delivery_rate": 8.725761772853186,
-      "dispatch_sla_breach_rate": 7.479224376731302,
+      "dispatch_sla_breach_rate": 7.4792243767313025,
       "median_processing_days": 722,
       "at_risk_order_value": 9402.45,
-      "platform_late_delivery_rate": 6.77309007981756,
-      "priority_group": "Investigate Now"
-    },
-    {
-      "seller_id": "06a2c3af7b3aee5d69171b0e14f0ee87",
-      "eligible_orders": 389,
-      "late_orders": 74,
-      "late_delivery_rate": 19.02313624678663,
-      "dispatch_sla_breach_rate": 31.10539845758355,
-      "median_processing_days": 389,
-      "at_risk_order_value": 8622.19,
       "platform_late_delivery_rate": 6.77309007981756,
       "priority_group": "Investigate Now"
     }
@@ -147,13 +147,13 @@
       "item_count": 5857,
       "late_delivery_rate": 7.205053781799556,
       "at_risk_item_value": 91298.05,
-      "average_review_score": 4.071391708240151
+      "average_review_score": 4.071391708240152
     },
     {
       "category": "bed_bath_table",
       "eligible_orders": 9272,
       "item_count": 10953,
-      "late_delivery_rate": 7.03003743266685,
+      "late_delivery_rate": 7.030037432666849,
       "at_risk_item_value": 79235.1,
       "average_review_score": 3.923922075523959
     },
@@ -162,23 +162,23 @@
       "eligible_orders": 7529,
       "item_count": 8430,
       "late_delivery_rate": 6.31079478054567,
-      "at_risk_item_value": 70453.26000000001,
-      "average_review_score": 4.165214277187538
+      "at_risk_item_value": 70453.26,
+      "average_review_score": 4.165214277187537
     },
     {
       "category": "auto",
       "eligible_orders": 3809,
       "item_count": 4139,
-      "late_delivery_rate": 7.030683740033824,
-      "at_risk_item_value": 66549.23000000001,
+      "late_delivery_rate": 7.030683740033825,
+      "at_risk_item_value": 66549.23,
       "average_review_score": 4.1149341142020495
     },
     {
       "category": "computers_accessories",
       "eligible_orders": 6529,
       "item_count": 7643,
-      "late_delivery_rate": 6.489598325264949,
-      "at_risk_item_value": 61459.32000000001,
+      "late_delivery_rate": 6.489598325264948,
+      "at_risk_item_value": 61459.32,
       "average_review_score": 3.9872485868279215
     },
     {
@@ -193,7 +193,7 @@
       "category": "cool_stuff",
       "eligible_orders": 3559,
       "item_count": 3718,
-      "late_delivery_rate": 5.836471221086606,
+      "late_delivery_rate": 5.836471221086605,
       "at_risk_item_value": 39269.48,
       "average_review_score": 4.195445920303605
     },
@@ -221,7 +221,7 @@
       "late_delivery_rate": 4.494493011310317,
       "median_shipping_days": 4.408136574074074,
       "at_risk_order_value": 303264.84,
-      "average_review_score": 4.245790493220087
+      "average_review_score": 4.2457904932200865
     },
     {
       "customer_state": "RJ",
@@ -229,12 +229,12 @@
       "late_delivery_rate": 12.105263157894736,
       "median_shipping_days": 8.350468750000001,
       "at_risk_order_value": 251522.72,
-      "average_review_score": 3.965440995823438
+      "average_review_score": 3.9654409958234376
     },
     {
       "customer_state": "MG",
       "eligible_orders": 11354,
-      "late_delivery_rate": 4.571076272679233,
+      "late_delivery_rate": 4.571076272679232,
       "median_shipping_days": 7.191684027777778,
       "at_risk_order_value": 88242.93,
       "average_review_score": 4.192290651307045
@@ -242,7 +242,7 @@
     {
       "customer_state": "BA",
       "eligible_orders": 3256,
-      "late_delivery_rate": 12.162162162162163,
+      "late_delivery_rate": 12.162162162162161,
       "median_shipping_days": 13.837309027777778,
       "at_risk_order_value": 73513.84,
       "average_review_score": 3.930628677609167
@@ -250,9 +250,9 @@
     {
       "customer_state": "RS",
       "eligible_orders": 5344,
-      "late_delivery_rate": 6.081586826347305,
+      "late_delivery_rate": 6.081586826347306,
       "median_shipping_days": 10.004369212962963,
-      "at_risk_order_value": 51843.54000000001,
+      "at_risk_order_value": 51843.54,
       "average_review_score": 4.184754036800601
     },
     {
@@ -260,7 +260,7 @@
       "eligible_orders": 3546,
       "late_delivery_rate": 8.206429780033842,
       "median_shipping_days": 9.526145833333334,
-      "at_risk_order_value": 45021.530000000006,
+      "at_risk_order_value": 45021.53,
       "average_review_score": 4.133560670645069
     },
     {
@@ -268,7 +268,7 @@
       "eligible_orders": 1995,
       "late_delivery_rate": 10.726817042606516,
       "median_shipping_days": 9.966261574074077,
-      "at_risk_order_value": 40332.78999999999,
+      "at_risk_order_value": 40332.79,
       "average_review_score": 4.078720162519045
     },
     {
@@ -276,7 +276,7 @@
       "eligible_orders": 1279,
       "late_delivery_rate": 13.76075058639562,
       "median_shipping_days": 14.75576388888889,
-      "at_risk_order_value": 36918.53999999999,
+      "at_risk_order_value": 36918.54,
       "average_review_score": 3.9442262372348784
     },
     {
@@ -293,7 +293,7 @@
       "late_delivery_rate": 9.6045197740113,
       "median_shipping_days": 12.846215277777778,
       "at_risk_order_value": 31938.3,
-      "average_review_score": 4.082963901203294
+      "average_review_score": 4.082963901203293
     }
   ],
   "caveats": [

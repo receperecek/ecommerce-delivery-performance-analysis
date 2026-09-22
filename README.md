@@ -20,7 +20,7 @@ Source: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/da
 
 ## Data Model
 
-`raw` preserves source tables, `staging` provides typed/normalized fields, and `analytics` contains aggregated intermediate models plus separate order, order-seller, and order-item facts. One-to-many sources are aggregated before joining; item-payment multiplication is prevented.
+`raw` preserves source tables, `staging` provides typed/normalized fields, and `analytics` contains aggregated intermediate models plus separate order, order-seller, and order-item facts. The SQL files are the executable source of truth; Python orchestrates their deterministic execution and exports their result tables. One-to-many sources are aggregated before joining; item-payment multiplication is prevented.
 
 ## KPI Definitions
 

@@ -11,6 +11,16 @@ EXPECTED = {
  'olist_sellers_dataset.csv':['seller_id','seller_zip_code_prefix','seller_city','seller_state'],
  'product_category_name_translation.csv':['product_category_name','product_category_name_english'],
 }
+TABLE_NAMES = {
+    'olist_orders_dataset.csv': 'orders',
+    'olist_customers_dataset.csv': 'customers',
+    'olist_order_items_dataset.csv': 'order_items',
+    'olist_order_payments_dataset.csv': 'order_payments',
+    'olist_order_reviews_dataset.csv': 'order_reviews',
+    'olist_products_dataset.csv': 'products',
+    'olist_sellers_dataset.csv': 'sellers',
+    'product_category_name_translation.csv': 'category_translation',
+}
 DATE_COLS = {'olist_orders_dataset.csv':['order_purchase_timestamp','order_approved_at','order_delivered_carrier_date','order_delivered_customer_date','order_estimated_delivery_date'], 'olist_order_items_dataset.csv':['shipping_limit_date'], 'olist_order_reviews_dataset.csv':['review_creation_date','review_answer_timestamp']}
 
 def load_csvs(raw_dir: Path):
@@ -29,5 +39,5 @@ def load_csvs(raw_dir: Path):
 
 def upload_raw(data, engine):
     for name, df in data.items():
-        table = name.replace('.csv','').replace('olist_','').replace('product_category_name_translation','category_translation')
-        df.to_sql(table, engine, schema='raw', if_exists='replace', index=False, chunksize=5000, method='multi')
+        table = TABLE_NAMES[name]
+        df.to_sql(table, engine, schema='raw', if_exists='append', index=False, chunksize=5000, method='multi')

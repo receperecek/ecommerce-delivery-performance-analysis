@@ -12,3 +12,9 @@ def test_reviews_valid():
 def test_value_reconciliation_exists():
     d=pd.read_csv('outputs/tables/value_reconciliation_summary.csv')
     assert 'value_reconciliation_gap' in set(d.metric)
+
+def test_validated_baselines_unchanged():
+    k=pd.read_csv('outputs/tables/executive_kpis.csv').set_index('metric')['value']
+    assert k['eligible_delivered_orders'] == 96470
+    assert abs(k['late_delivery_rate'] - 6.7730900798175595) < 1e-6
+    assert abs(k['at_risk_order_value'] - 1150892.13) < 1e-6
